@@ -1,5 +1,10 @@
 <html>
   <head>
+    <style>
+      span, a {
+        font-size: 25px;
+      }
+    </style>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       var url;
@@ -15,7 +20,7 @@
     </script>
   </head>
   <body>
-    <span>To add bookmark, drag this link to bookmark bar: </span>
+    <span>To add this site as a bookmark, drag this link to your bookmarks toolbar: </span>
     <a href="javascript:window.open('https://viewPDF.github.io/?url='+window.location.href, '_blank').focus();">PDF viewer</a>
   </body>
 </html>
