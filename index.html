@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      var url;
+      if(urlParams.has('url')){
+        url = urlParams.get('url');
+        url = url.replace(/https:\/\/github\.com\/(.*?)\/blob(.*?)\.pdf/g, "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/$1$2.pdf");
+        window.location.href = url;
+      }else{
+        url = prompt("Link to view:");
+        url = url.replace(/https:\/\/github\.com\/(.*?)\/blob(.*?)\.pdf/g, "https://docs.google.com/viewer?url=https://raw.githubusercontent.com/$1$2.pdf");
+      	window.open(url, '_blank').focus();
+      }
+    </script>
+  </head>
+  <body>
+    <span>To add bookmark, drag this link to bookmark bar: </span>
+    <a href="javascript:window.open('https://viewPDF.github.io/?url='+window.location.href, '_blank').focus();">PDF viewer</a>
+  </body>
+</html>
